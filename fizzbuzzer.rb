@@ -1,44 +1,21 @@
 class Fizzbuzzer
 
-  def initialize(number=0)
-    @number = number
-    @array =[]
+  def initialize(multi)
+    @multi = multi
   end
 
-  def run(endpoint)
-    @array.each do |n|
-      @array.push n += 1
-      if
-        n == endpoint
-        break
-      elsif
-        n % @number == 0
+  def run (endpoint)
+    data = 1 .. endpoint
+    data.map do |n|
+      if n % @multi == 0
         puts 'Fizz'
-      end
-
-end
+      else
+        puts n
       end
     end
-    puts "Fizzbuzzer prints: #{@array}"
-  end
+   end
+
 end
 
-fizzy = Fizzbuzzer.new
-fizzy
-
-# f = Fizzbuzzer.new 4
-# f.run 14
-# 1
-# 2
-# 3
-# Fizz
-# 5
-# 6
-# 7
-# Fizz
-# 9
-# 10
-# 11
-# Fizz
-# 13
-# 14
+fizzy = Fizzbuzzer.new 4
+fizzy.run(16)
